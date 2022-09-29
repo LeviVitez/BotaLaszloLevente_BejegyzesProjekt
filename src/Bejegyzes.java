@@ -46,8 +46,14 @@ public class Bejegyzes {
 
     @Override
     public String toString() {
-        return String.format("szerző - %s likeok - %d letrejott - %d \n szerkesztve: %s \n %s",
-                szerzo,likeok,letrejott,szerkesztve,tartalom);
+        if (szerkesztve != letrejott){
+            return String.format("szerző - %s likeok - %d letrejott - %d \n szerkesztve: %s \n %s",
+                    szerzo,likeok,letrejott,szerkesztve,tartalom);
+        }else{
+            return String.format("szerző - %s likeok - %d letrejott - %d \n %s",
+                    szerzo,likeok,letrejott,tartalom);
+        }
+
     }
 
 }
