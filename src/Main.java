@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.Console;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -33,8 +30,22 @@ public class Main {
         }
 
         //2.c
-
-
+        try {
+            FileReader fr = new FileReader("bejegyzesek.csv");
+            BufferedReader br = new BufferedReader(fr);
+            String sor = br.readLine();
+            while (sor != null && !sor.equals("")) {
+                String[] tomb = sor.split(";");
+                bejegyzes1.add(new Bejegyzes(tomb[0], tomb[1]));
+                sor = br.readLine();
+            }
+            br.close();
+            fr.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.err);
+        } catch (IOException e) {
+            e.printStackTrace(System.err);
+        }
 
         //2.e
         System.out.print("kérek egy szöveget ");
