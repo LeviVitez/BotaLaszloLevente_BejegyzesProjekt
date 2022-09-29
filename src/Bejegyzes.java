@@ -10,9 +10,13 @@ public class Bejegyzes {
     public Bejegyzes(String szerzo, String tartalom, int likeok, LocalDateTime letrejott, LocalDateTime szerkesztve) {
         this.szerzo = szerzo;
         this.tartalom = tartalom;
-        this.likeok = likeok;
-        this.letrejott = letrejott;
-        this.szerkesztve = szerkesztve;
+        this.likeok = 0;
+        this.letrejott = LocalDateTime.now();
+        this.szerkesztve = LocalDateTime.now();
+    }
+
+    public void like(){
+        likeok++;
     }
 
     public String getSzerzo() {
