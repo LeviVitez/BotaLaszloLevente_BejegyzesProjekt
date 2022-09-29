@@ -19,7 +19,6 @@ public class Bejegyzes {
         likeok++;
     }
 
-
     public String getSzerzo() {
         return szerzo;
     }
