@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
+import java.io.Console;
 import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,6 +30,52 @@ public class Main {
             }
         }
 
+        //2.e
+        System.out.print("kérek egy szöveget ");
+        Scanner sc2 = new Scanner(System.in);
+        String textvaltozas = sc.nextLine();
+        bejegyzes1.get(1).setTartalom(textvaltozas);
+
+        //2.f
+        for (int i = 0; i < bejegyzes1.size() ; i++) {
+            System.out.println(bejegyzes1.get(i).getSzerzo());
+            System.out.println(bejegyzes1.get(i).getTartalom());
+            System.out.println(bejegyzes1.get(i).getLikeok());
+            System.out.println(bejegyzes1.get(i).getLetrejott());
+            System.out.println(bejegyzes1.get(i).getSzerkesztve());
+            System.out.println();
+        }
+
+        //3.a
+        int legtobblike=0;
+        for (int i = 0; i < bejegyzes1.size() ; i++) {
+            if (bejegyzes1.get(i).getLikeok()>legtobblike){
+                legtobblike=bejegyzes1.get(i).getLikeok();
+            }
+        }
+        System.out.printf("legtöbb lájkos bejegyzés: %d",legtobblike);
+
+        //3.b
+        boolean vane35=false;
+        for (int i = 0; i < bejegyzes1.size() ; i++) {
+            if (bejegyzes1.get(i).getLikeok()>35){
+                vane35=true;
+            }
+        }
+        if (vane35==true){
+            System.out.println("van 35-nél több likeos bejegyzés");
+        }else{
+            System.out.println("nincs 35-nél több likeos bejegyzés");
+        }
+
+        //3.c
+        int kevesebbmint15like=0;
+        for (int i = 0; i < bejegyzes1.size() ; i++) {
+            if (bejegyzes1.get(i).getLikeok()<15){
+                kevesebbmint15like++;
+            }
+        }
+        System.out.printf("%d-db bejegyzés volt aminek kevesebb, mint 15 likeja volt");
 
 
     }
