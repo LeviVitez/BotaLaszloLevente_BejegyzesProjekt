@@ -67,6 +67,7 @@ public class Main {
 
         //2.f
         for (int i = 0; i < bejegyzes1.size(); i++) {
+            System.out.println();
             System.out.println(bejegyzes1.get(i).getSzerzo());
             System.out.println(bejegyzes1.get(i).getTartalom());
             System.out.println(bejegyzes1.get(i).getLikeok());
