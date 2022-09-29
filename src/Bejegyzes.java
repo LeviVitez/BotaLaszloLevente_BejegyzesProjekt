@@ -19,6 +19,7 @@ public class Bejegyzes {
         likeok++;
     }
 
+
     public String getSzerzo() {
         return szerzo;
     }
@@ -42,4 +43,11 @@ public class Bejegyzes {
     public LocalDateTime getSzerkesztve() {
         return szerkesztve;
     }
+
+    @Override
+    public String toString() {
+        return String.format("szerző - %s likeok - %d letrejott - %d \n szerkesztve: %s \n %s",
+                szerzo,likeok,letrejott,szerkesztve,tartalom);
+    }
+
 }
