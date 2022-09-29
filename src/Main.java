@@ -10,9 +10,11 @@ public class Main {
     static List<Bejegyzes> bejegyzes1 =new ArrayList<>();
     File file=new File("bejegyzesek.csv");
     public static void main(String[] args) {
+        //2.a
         bejegyzes1.add(new Bejegyzes("Git Jakab","Autósmagazin"));
         bejegyzes1.add(new Bejegyzes("Commit Ferenc","Tuningolás"));
 
+        //2.b
         System.out.print("Mennyi új bejegyzést szeretnél? ");
         Scanner sc = new Scanner(System.in);
         int bekertszam = sc.nextInt();
@@ -29,6 +31,10 @@ public class Main {
                 bejegyzes1.add(new Bejegyzes(szerzo,tartalom));
             }
         }
+
+        //2.c
+
+
 
         //2.e
         System.out.print("kérek egy szöveget ");
@@ -53,7 +59,7 @@ public class Main {
                 legtobblike=bejegyzes1.get(i).getLikeok();
             }
         }
-        System.out.printf("legtöbb lájkos bejegyzés: %d",legtobblike);
+        System.out.printf("legtöbb lájkos bejegyzés: %d \n",legtobblike);
 
         //3.b
         boolean vane35=false;
@@ -75,7 +81,7 @@ public class Main {
                 kevesebbmint15like++;
             }
         }
-        System.out.printf("%d-db bejegyzés volt aminek kevesebb, mint 15 likeja volt");
+        System.out.printf("%d-db bejegyzés volt aminek kevesebb, mint 15 likeja volt",kevesebbmint15like);
 
 
     }
